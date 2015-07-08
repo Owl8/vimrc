@@ -29,39 +29,18 @@ endfor
 imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
 imap <expr> . pumvisible() ? "\<C-E>.\<C-X>\<C-O>\<C-P>" : ".\<C-X>\<C-O>\<C-P>"
 
-"---------------------------
-" Start Neobundle Settings.
-"---------------------------
-" bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
- 
-" Required:
+if has('vim_starting')
+   " 初回起動時のみruntimepathにneobundleのパスを指定する
+   set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" NeoBundleを初期化
 call neobundle#begin(expand('~/.vim/bundle/'))
- 
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
- 
-" 今後このあたりに追加のプラグインをどんどん書いて行きます！！"
- 
+
+" インストールするプラグインをここに記述
+NeoBundle 'Shougo/vimfiler'
+
 call neobundle#end()
- 
-" Required:
+
+" ファイルタイプ別のプラグイン/インデントを有効にする
 filetype plugin indent on
- 
-" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-" 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
-NeoBundleCheck
- 
-"-------------------------
-" End Neobundle Settings.
-"-------------------------
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
- 
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
- 
-" NERDTreeを設定                  <----- 追記
-NeoBundle 'scrooloose/nerdtree'   <----- 追記
- 
-call neobundle#end()
