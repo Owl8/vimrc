@@ -55,3 +55,13 @@ NeoBundleCheck
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+ 
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+ 
+" NERDTreeを設定                  <----- 追記
+NeoBundle 'scrooloose/nerdtree'   <----- 追記
+ 
+call neobundle#end()
