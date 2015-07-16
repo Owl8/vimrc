@@ -13,7 +13,10 @@ set ignorecase
 set smartcase
 set wrapscan
 
-highlight Comment ctermfg=Green
+highlight Normal ctermbg=black ctermfg=grey
+highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
+highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
+highlight Comment ctermfg=LightGreen
 highlight Constant ctermfg=Red
 highlight Identifier ctermfg=Cyan
 highlight Statement ctermfg=Yellow
@@ -27,20 +30,7 @@ for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
 endfor
 
 imap <expr> <TAB> pumvisible() ? "\<Down>" : "\<Tab>"
+
 imap <expr> . pumvisible() ? "\<C-E>.\<C-X>\<C-O>\<C-P>" : ".\<C-X>\<C-O>\<C-P>"
 
-if has('vim_starting')
-   " 初回起動時のみruntimepathにneobundleのパスを指定する
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
 
-" NeoBundleを初期化
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" インストールするプラグインをここに記述
-NeoBundle 'Shougo/vimfiler'
-
-call neobundle#end()
-
-" ファイルタイプ別のプラグイン/インデントを有効にする
-filetype plugin indent on
