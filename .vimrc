@@ -41,3 +41,6 @@ inoremap <C-l> <Right>
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
+autocmd BufNewFile,BufRead *.c nnoremap <C-e> :make run
+autocmd BufNewFile,BufRead *.cpp nnoremap <C-e> :make run
+
