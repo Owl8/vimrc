@@ -9,6 +9,8 @@ set wildmenu wildmode=list:full
 set cursorline
 set laststatus=3
 
+set clipboard=unnamed,autoselect
+
 set ignorecase
 set smartcase
 set wrapscan
