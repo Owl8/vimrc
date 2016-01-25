@@ -1,3 +1,20 @@
+if has('vim_starting')
+	" 初回起動時のみruntimepathにneobundleのパスを指定する
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" NeoBundleを初期化
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" インストールするプラグインをここに記述
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
+
+call neobundle#end()
+
+" ファイルタイプ別のプラグイン/インデントを有効にする
+filetype plugin indent on
+
 set number
 set title
 set showmatch
@@ -38,9 +55,13 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+inoremap ( ()<Left>
+inoremap { {}<Left>
+
 autocmd BufNewFile,BufRead *.rb nnoremap <C-e> :!ruby %
 autocmd BufNewFile,BufRead *.py nnoremap <C-e> :!python %
 autocmd BufNewFile,BufRead *.pl nnoremap <C-e> :!perl %
 autocmd BufNewFile,BufRead *.c nnoremap <C-e> :make run
 autocmd BufNewFile,BufRead *.cpp nnoremap <C-e> :make run
+autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
