@@ -9,6 +9,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " インストールするプラグインをここに記述
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'lervag/vimtex'
+	let g:vimtex_fold_envs = 0
+	let g:vimtex_view_general_viewer = 'evince'
+
+NeoBundle 'thinca/vim-quickrun'
 
 call neobundle#end()
 
