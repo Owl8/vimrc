@@ -22,8 +22,6 @@ filetype plugin indent on
 
 set number
 set title
-set showmatch
-syntax on
 set tabstop=4
 set smartindent
 set backspace=start,eol,indent
@@ -37,16 +35,21 @@ set ignorecase
 set smartcase
 set wrapscan
 
-highlight Normal ctermbg=black ctermfg=grey
-highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
-highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
-highlight Comment ctermfg=LightGreen
-highlight Constant ctermfg=Red
-highlight Identifier ctermfg=Cyan
-highlight Statement ctermfg=Yellow
-highlight Title ctermfg=Magenta
-highlight Special ctermfg=Magenta
-highlight PreProc ctermfg=Magenta
+let loaded_matchparen = 1
+colorscheme molokai
+set t_Co=256
+syntax on
+
+"highlight Normal ctermbg=black ctermfg=grey
+"highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
+"highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
+"highlight Comment ctermfg=LightGreen
+"highlight Constant ctermfg=Red
+"highlight Identifier ctermfg=Cyan
+"highlight Statement ctermfg=Yellow
+"highlight Title ctermfg=Magenta
+"highlight Special ctermfg=Magenta
+"highlight PreProc ctermfg=Magenta
 
 set completeopt=menuone
 for k in split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_",'\zs')
